@@ -12,6 +12,12 @@ body {
     position: relative;
 }
 
+.nav-class{
+    position: absolute;
+    width: 100%;
+    padding: 0 20px;
+}
+
 .column {
     height: 400px;
     position: relative;
@@ -38,6 +44,92 @@ body {
     right: -50px;
 }
 
+.grid {
+    padding: 30px 50px 30px 50px;
+}
+
+.grid .image-container {
+    position: relative; 
+    margin: 10px;   
+}
+
+.grid .image-container img {
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 1px 1px 1px rgb(0 0 0 / 28%);
+}
+
+.text-block .upper{
+    width: 100%;
+    position: absolute;
+    color: white;
+    bottom: 40%;
+    margin: 0;
+    padding: 0 40px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.text-block .down{
+    position: absolute;
+    margin:0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 10%;    
+    color: white;
+    font-size: 13px;
+    padding:100px 40px;
+    
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0 10px;
+    overflow: hidden;
+    
+}
+
+li{
+    display: inline;
+    
+}
+
+li a{
+    text-decoration: none;
+}
+
+/* .nav-blog{
+    position: relative;
+    top: 50px;
+    
+}
+
+.nav-list{
+    list-style: none;
+    text-align: center;
+}
+
+.nav-item{
+    font-size: 20px;
+    display: inline;
+}
+
+.nav-item a{
+    color: #010A72;
+    text-decoration: none;
+    padding: 10px;
+    
+}
+.nav-item.active a{
+    color: #00C3D1;
+    font-size: 30px;
+}
+ */
+
 @media (max-width: 768px) {
     .column {
         height: 200px;
@@ -52,4 +144,29 @@ body {
     .column .image{
         right: 0;
     }
+
+    .row{
+        padding: 20px
+    }
+
+    .text-block .upper{
+        padding-left: 30px;
+    }
+
+    .text-block .down{
+        padding-left: 30px;
+    }
+
+    /* .nav-blog{
+        position: relative;
+        top: 35px;
+    }
+
+    .nav-item{
+        font-size: 15px;
+    }
+
+    .nav-item.active a{
+        font-size: 20px;
+    } */
 }
