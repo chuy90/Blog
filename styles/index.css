@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -12,7 +16,7 @@ body {
     position: relative;
 }
 
-.nav-class{
+.nav-class {
     position: absolute;
     width: 100%;
     padding: 0 20px;
@@ -23,7 +27,7 @@ body {
     position: relative;
 }
 
-.headline{
+.headline {
     color: white;
     padding-right: 25%;
     display: flex;
@@ -46,6 +50,7 @@ body {
 
 .grid {
     padding: 30px 50px 30px 50px;
+
 }
 
 .grid .image-container {
@@ -63,7 +68,7 @@ body {
     object-fit: cover;
 }
 
-.text-block .upper{
+.text-block .upper {
     width: 100%;
     position: absolute;
     color: white;
@@ -74,7 +79,7 @@ body {
     font-weight: 600;
 }
 
-.text-block .down{
+.text-block .down {
     position: absolute;
     margin:0;
     bottom: 0;
@@ -87,7 +92,7 @@ body {
     
 }
 
-ul{
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0 10px;
@@ -95,13 +100,17 @@ ul{
     
 }
 
-li{
+li {
     display: inline;
     
 }
 
-li a{
+li a {
     text-decoration: none;
+}
+
+.album-container {
+    margin: 10px;
 }
 
 /* .nav-blog{
