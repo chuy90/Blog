@@ -6,7 +6,7 @@ function getPhotos(albumId) {
             window.location.href = '../../index.html';
         } else {
             data.forEach(photo => {
-                $('.grid').append('<div class="col-12 col-md-4 block"> <div class="image-container"> <img src="'+ photo.url +'" alt="image 1"> <div class="text-block"> <p class="upper">'+ photo.title +'</p> <p class="down">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa magnam modi </p> </div> </div> </div>');
+                $('.grid').append('<div class=" col-12 col-md-4"> <div class="card text-center album-container" "> <img class="card-img-top" src="'+photo.url+'" alt="Card image cap"> <div class="card-body"> <h5 class="card-title">'+photo.title+'</h5> <a href="#" class="btn btn-primary">View album</a> </div> </div> </div>');
          });
         }
     })
