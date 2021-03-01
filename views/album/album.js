@@ -1,12 +1,11 @@
 function getPhotos(albumId) {
-    fetch('https://jsonplaceholder.typicode.com/albums/1/photos?id=' + albumId)
+    fetch('https://jsonplaceholder.typicode.com/albums/'+ albumId +'/photos')
     .then(response => response.json())
     .then(data => {
         if (data.length === 0) {
             window.location.href = '../../index.html';
         } else {
-            const [photo] = data;
-            // const photo = data[0];
+            data.forEach(photo => {
                 $('.view-albums-container').append('<div class=" col-12"> <div class="card text-center album-container" "> <img class="card-img-top" src="'+photo.url+'" alt="Card image cap"> <div class="card-body"> <h5 class="card-title">'+photo.title+'</h5> <a href="../../index.html" class="btn btn-primary">Go Back</a> </div> </div> </div>');
         }
     })

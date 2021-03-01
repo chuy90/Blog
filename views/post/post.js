@@ -6,7 +6,7 @@ function getPost(id) {
         })
 }
 
-function getComment(id) {
+function getComments(id) {
     fetch('https://jsonplaceholder.typicode.com/comments?postId='+id)
     .then(response => response.json())
     .then(commentData => { 
@@ -21,7 +21,7 @@ $(document).ready(function() {
     if (parameters.get('id')) {
         const id = parameters.get('id');
         const commentId = parameters.get('postId');
-        getComment(id);
+        getComments(id);
         getPost(id);
     } 
     else {
