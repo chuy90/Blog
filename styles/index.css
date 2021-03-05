@@ -113,6 +113,39 @@ li a {
     margin: 10px;
 }
 
+.view-posts-container {
+    justify-content: center;
+    display: flex;  
+    margin-left: auto;
+    margin-right: auto; 
+    width: 100%;
+}
+
+.comments-container h5{
+    justify-content: left;
+    font-weight: bold;
+}
+
+.sub-nav{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.sub-nav button {
+    font-size: 23px;
+    border: none;
+    background: none;
+}
+
+.sub-nav button.active {
+    color:#24E2F5;
+    font-size: 23px;
+    border: none;
+    background: none;
+    font-weight: bold;
+}
+
 /* .nav-blog{
     position: relative;
     top: 50px;
