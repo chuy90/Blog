@@ -16,11 +16,34 @@ function getComments(id) {
         })
 }
 
+
+
+$(document).on('click','.post-button',function() {
+  var title = document.getElementById('commentTitle').value;
+  var body = document.getElementById('commentBody').value;
+  var email = document.getElementById('commentEmail').value;
+
+  fetch('https://jsonplaceholder.typicode.com/comments', {
+    method: 'POST',
+    body: JSON.stringify({
+      postId: 1,
+      title: title,
+      email: email,
+      body: body,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));  
+});
+
+
 $(document).ready(function() {
     const parameters = new URLSearchParams(window.location.search)
     if (parameters.get('id')) {
         const id = parameters.get('id');
-        const commentId = parameters.get('postId');
         getComments(id);
         getPost(id);
     } 
