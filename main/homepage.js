@@ -18,9 +18,28 @@ function getPosts() {
        })
 }
 
+function addSearchbar () {
+       $('.posts-container').append(`<input placeholder="Search posts" class="form-control search-input">`);       
+}
+
 $(document).ready(function() {
-       getAlbums();
+       getAlbums();  
+       $(".search-input").on('keyup', function(){
+              var searchBar = $(".search-input").val().toLowerCase();
+              $(".posts-container").filter(function(){
+                $(this).toggle($(this).text().toLowerCase().indexOf(searchBar) > -1)
+              });
+            });        
 });
+
+// $(document).ready(function(){
+//        $(".search-input").on('keyup', function(){
+//          var searchBar = $(".search-input").val().toLowerCase();
+//          $(".album-container").filter(function(){
+//            $(this).toggle($(this).text().toLowerCase().indexOf(searchBar) > -1)
+//          });
+//        });
+//      });
 
 let postsClicked = false;
 
@@ -34,6 +53,7 @@ $(document).on('click','.sub-nav button',function() {
               if (!postsClicked) {
                      getPosts();
                      postsClicked = true;
+                     addSearchbar();
               }
               
               
