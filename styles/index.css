@@ -163,6 +163,7 @@ color:#18838d;
     opacity: 0.5;
 }
 
+
 @media (max-width: 768px) {
     .column {
         height: 200px;
