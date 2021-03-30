@@ -163,6 +163,9 @@ color:#18838d;
     opacity: 0.5;
 }
 
+.edit-input {
+    align-content: center;
+}
 
 @media (max-width: 768px) {
     .column {
