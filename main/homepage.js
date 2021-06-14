@@ -5,6 +5,7 @@ function getAlbums() {
               data.forEach(album => {
                      $('.albums-container').append('<div class=" col-12 col-md-4"> <div class="card text-center album-container"> <div class="card-body"> <h5 class="card-title">'+album.title+'</h5>  <a href="./views/album/album.html?id='+album.id+'" class="btn btn-primary">View this album</a> </div> </div> </div>');
               });
+              handleSearch(data, 'albums');
        })
 }
 
@@ -15,34 +16,49 @@ function getPosts() {
               data.forEach(post => {
                      $('.posts-container').append('</div><div class=" col-12 col-md-4"> <div class="card text-center album-container"> <div class="card-body"> <h5 class="card-title">'+post.title+'</h5> <p>'+post.body+'</p> <a href="./views/post/post.html?id='+post.id+'" class="btn btn-primary button-post"> Read more</a> </div> </div> </div>');
               });
+              handleSearch(data, 'posts');
        })
 }
 
-function addSearchbar () {
-       $('.posts-container').append(`<input placeholder="Search posts" class="form-control search-input">`);       
+function handleSearchbar (type) {
+       if (type === 'posts'){
+              $('.search-posts').show();
+              $('.search-albums').hide();
+       } else {
+              //albums tab selected
+              $('.search-posts').hide();
+              $('.search-albums').show();
+       }
+}
+
+function handleSearch(values, type) {
+       if (type === 'albums') {
+              
+              $('.search-albums').autocomplete({
+                     source: values,
+              }).autocomplete( "instance" )._renderItem = function(ul, item) {
+                     return $("<li class='search-list'>")
+                     .append(`<a href="./views/album/album.html?id=${item.id}">${item.title}</a>`)
+                     .appendTo(ul);
+              };
+       } else {
+              $('.search-posts').autocomplete({
+                     source: values,
+              }).autocomplete( "instance" )._renderItem = function(ul, item) {
+                     return $("<li class='search-list'>")
+                     .append(`<a href="./views/post/post.html?id=${item.id}">${item.title}</a>`)
+                     .appendTo(ul);
+              };
+       }
 }
 
 $(document).ready(function() {
-       getAlbums();  
-       $(".search-input").on('keyup', function(){
-              var searchBar = $(".search-input").val().toLowerCase();
-              $(".posts-container").filter(function(){
-                $(this).toggle($(this).text().toLowerCase().indexOf(searchBar) > -1)
-              });
-            });        
+       getAlbums();      
 });
-
-// $(document).ready(function(){
-//        $(".search-input").on('keyup', function(){
-//          var searchBar = $(".search-input").val().toLowerCase();
-//          $(".album-container").filter(function(){
-//            $(this).toggle($(this).text().toLowerCase().indexOf(searchBar) > -1)
-//          });
-//        });
-//      });
 
 let postsClicked = false;
 
+//click tab not selected
 $(document).on('click','.sub-nav button',function() {
        $('.sub-nav button').not(this).removeClass('active');
        $(this).addClass('active'); 
@@ -50,10 +66,10 @@ $(document).on('click','.sub-nav button',function() {
        if (buttonType === 'posts') {
               $('.albums-container').hide();
               $('.posts-container').show();
+              handleSearchbar('posts');
               if (!postsClicked) {
                      getPosts();
                      postsClicked = true;
-                     addSearchbar();
               }
               
               
@@ -61,6 +77,7 @@ $(document).on('click','.sub-nav button',function() {
               // albums selected
               $('.albums-container').show();
               $('.posts-container').hide();
+              handleSearchbar('albums');
        }
 });
 
