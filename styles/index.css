@@ -163,6 +163,25 @@ color:#18838d;
     opacity: 0.5;
 }
 
+.form-add {
+    padding: 0px, 10px;
+}
+
+.edit-input {
+    align-content: center;
+}
+
+.enter-edit {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    margin: 0%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+  }
+
 @media (max-width: 768px) {
     .column {
         height: 200px;
