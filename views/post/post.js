@@ -40,28 +40,16 @@ function getComments(id) {
         })
 }
 
-function addComments() {
-  $('.add-comments').append(`<input placeholder="Name" id='add-name' class="col-12 post-input form-control">
-  <input placeholder="E-mail" id='add-email' class="col-12 post-input form-control">
-  <input placeholder="Comment here" id='add-body' class="col-12 post-input form-control">
-  <button class="btn col-2 post-button">Add</button> 
-  <div class="comment-label">
-  <label class="col-2">Comments<span class="badge badge-secondary comment-badge"></span></label></div>
-  </div>`)
-}
-
-$(document).ready(function(){
-  $(".search-input").on('keyup', function(){
-    var searchBar = $(".search-input").val().toLowerCase();
-    $(".album-container").filter(function(){
-      $(this).toggle($(this).text().toLowerCase().indexOf(searchBar) > -1)
-    });
-  });
-});
+// $(document).ready(function(){
+//   $(".search-input").on('keyup', function(){
+//     var searchBar = $(".search-input").val().toLowerCase();
+//     $(".album-container").filter(function(){
+//       $(this).toggle($(this).text().toLowerCase().indexOf(searchBar) > -1)
+//     });
+//   });
+// });
 
 $(document).on('click', '.post-button', function() {
-  var name = $("#add-name").val();
-  var email = $("#add-email").val();
   var comment = $("#add-body").val();
 
   var plusCount = parseInt($('.comment-badge').text(),10);
@@ -72,8 +60,8 @@ $(document).on('click', '.post-button', function() {
     method: 'POST',
     body: JSON.stringify({
       postId: 1,
-      name: name,
-      email: email,
+      name: 'lorem ipsum',
+      email: 'email@net',
       body: comment,
     }),
     headers: {
@@ -125,7 +113,6 @@ $(document).ready(function() {
     const parameters = new URLSearchParams(window.location.search)
     if (parameters.get('id')) {
         const id = parameters.get('id');
-        addComments();
         getComments(id);
         getPost(id);
         

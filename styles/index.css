@@ -171,6 +171,10 @@ color:#18838d;
     align-content: center;
 }
 
+.add-comments {
+    padding: 0px 30px;
+}
+
 .enter-edit {
     background-color: #4CAF50;
     border: none;
@@ -182,8 +186,32 @@ color:#18838d;
     font-size: 10px;
   }
 
+  .post-button {
+    background-color: #00C5BE;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    padding: 0px;
+    text-transform: uppercase;
+    font-weight: normal;
+    ;
+  }
+
+  .post-input {
+      margin-left: 5px;
+  }
+
   .search-list a {
       display: block;
+  }
+
+  .user-comment{
+      font-weight: bold;
+  }
+
+  .username {
+      font-weight: bold;
+      float: right;
   }
 
 @media (max-width: 768px) {
