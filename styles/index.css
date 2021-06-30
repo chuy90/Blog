@@ -214,6 +214,14 @@ color:#18838d;
       float: right;
   }
 
+  #load-more-albums-btn {
+      display:none;
+  }
+
+  #load-more-posts-btn {
+      display: none;
+  }
+
 @media (max-width: 768px) {
     .column {
         height: 200px;

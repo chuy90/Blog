@@ -67,8 +67,16 @@
             <input style="display: none;" placeholder="Search posts" class="form-control search-posts">
             <input placeholder="Search albums" class="form-control search-albums">
         </div>  
+        
         <div style="display: none;" class="row align-items center grid posts-container"></div>
+        <div style="text-align: center;">
+            <button id="load-more-posts-btn" data-lastpost="10" class="btn btn-primary" type="button">Load more</button>
+        </div> 
+
         <div class="row align-items center grid albums-container"></div>
+        <div style="text-align: center;">
+            <button id="load-more-albums-btn" data-lastalbum="10" class="btn btn-primary" type="button">Load more</button>
+        </div>  
     </div>
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
